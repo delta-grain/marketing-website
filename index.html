@@ -10,7 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <div style="/*height: -webkit-fill-available;*/" class="flex flex-col h-screen justify-center gap-4 text-center">
+  <div id="main" class="flex flex-col h-screen justify-center gap-4 text-center">
     <div class="flex justify-center">
       <img src="assets/logo-text.png" class="px-8 sm:px-12 md:px-24 lg:px-0">
     </div>
@@ -34,3 +34,19 @@
   </div>
 </body>
 </html>
+
+<script>
+let userAgentString = window.navigator.userAgent
+let isChrome = userAgentString.indexOf("Chrome") > -1
+let isSafari = userAgentString.indexOf("Safari") > -1
+if ((isChrome) && (isSafari)) isSafari = false
+if (isSafari) {
+  document.getElementById("main").addClass("safari-full-height")
+}
+</script>
+
+<style>
+.safari-full-height {
+  height: -webkit-fill-available;
+}
+</style>
