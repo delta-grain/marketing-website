@@ -41,7 +41,7 @@ let isChrome = userAgentString.indexOf("Chrome") > -1
 let isSafari = userAgentString.indexOf("Safari") > -1
 if ((isChrome) && (isSafari)) isSafari = false
 if (isSafari) {
-  document.getElementById("main").addClass("safari-full-height")
+  document.getElementById("main").classList.add("safari-full-height")
 }
 </script>
 
